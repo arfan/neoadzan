@@ -18,14 +18,15 @@ A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 copyright (c) 2015-2017 by cahya dsn; cahyadsn@gmail.com
 ================================================================================*/
-$dbhost='localhost';
-$dbuser='dev';
-$dbpass='password';
-$dbname='db_wilayah';
-$dbtable='wilayah_137_v1';
-$db_dsn = "mysql:dbname=$dbname;host=$dbhost";
+//$dbhost='localhost';
+//$dbuser='dev';
+//$dbpass='password';
+//$dbname='db_wilayah';
+//$dbtable='wilayah_137_v1';
+//$db_dsn = "mysql:dbname=$dbname;host=$dbhost";
 try {
-  $db = new PDO($db_dsn, $dbuser, $dbpass);
+  //$db = new PDO($db_dsn, $dbuser, $dbpass);
+  $db = new PDO('sqlite:wilayah_137_v1.sqlite');
 } catch (PDOException $e) {
   echo 'Connection failed: '.$e->getMessage();
 }
