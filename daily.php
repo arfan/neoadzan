@@ -11,15 +11,13 @@ if(empty($d->lat)){
 	$lat=$d->lat;
 	$lng=$d->lng;
 	$tz=$d->tz;
-}
-
-if(empty($lat)){
-	$r=array('status'=>false,'error'=>'data not found');
-}else{
+	
 	$neoadzan=new NeoAdzan();
 	$neoadzan->setLatLng($lat,$lng);
 	$neoadzan->setTimeZone($tz);
 	$r=$neoadzan->getDaily($y,$m,$day);
+	
+	header('Content-Type: application/json');
+	echo json_encode($r);
 }
-header('Content-Type: application/json');
-echo json_encode($r);
+
