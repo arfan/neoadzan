@@ -26,7 +26,7 @@ copyright (c) 2015-2017 by cahya dsn; cahyadsn@gmail.com
 //$db_dsn = "mysql:dbname=$dbname;host=$dbhost";
 try {
   //$db = new PDO($db_dsn, $dbuser, $dbpass);
-  $db = new PDO('sqlite:wilayah_137_v1.sqlite');
+  $db = new PDO('sqlite:./db/wilayah_137_v1.sqlite');
 } catch (PDOException $e) {
   echo 'Connection failed: '.$e->getMessage();
 }
